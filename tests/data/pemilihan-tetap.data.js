@@ -14,4 +14,5 @@ export const FILE ={
   invalid: './tests/file/Data Pemilih 2023-07-14 22_32_58 Tidak Valid.xlsx',
   blank: './tests/file/Data Pemilih 2023-07-14 23_27_08 Blank.xlsx',
   duplikat: './tests/file/Data Pemilih 2023-07-14 22_32_58 Duplikat.xlsx',
+  word: './tests/file/test.docx',
 }

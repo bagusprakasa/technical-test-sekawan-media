@@ -36,5 +36,55 @@
       element.fillFilledClear(pemilihanTetapPage.searchInput, data.SEARCH_DATA.blank);
       assert.shouldContainText(pemilihanTetapPage.assertionSearch, data.SEARCH_DATA.blank);
       cy.wait(3000)
+      
+      // Import pemilihan tetap dengan data valid
+      element.click(pemilihanTetapPage.dropDownImport);
+      element.click(pemilihanTetapPage.modalImport);
+      element.fillFile(pemilihanTetapPage.inputFileImport, data.FILE.valid);
+      element.click(pemilihanTetapPage.buttonFileImport);
+      element.click(pemilihanTetapPage.swalConfirm);
+      assert.shouldContainText(pemilihanTetapPage.swalContent, 'Successfully changed data.');
+      element.click(pemilihanTetapPage.swalConfirm);
+      cy.wait(3000)
+      
+      // Import pemilihan tetap dengan data tidak valid
+      element.click(pemilihanTetapPage.dropDownImport);
+      element.click(pemilihanTetapPage.modalImport);
+      element.fillFile(pemilihanTetapPage.inputFileImport, data.FILE.invalid);
+      element.click(pemilihanTetapPage.buttonFileImport);
+      element.click(pemilihanTetapPage.swalConfirm);
+      assert.shouldContainText(pemilihanTetapPage.swalContent, 'Successfully changed data.');
+      element.click(pemilihanTetapPage.swalConfirm);
+      cy.wait(3000)
+
+      // Import pemilihan tetap dengan data duplikat
+      element.click(pemilihanTetapPage.dropDownImport);
+      element.click(pemilihanTetapPage.modalImport);
+      element.fillFile(pemilihanTetapPage.inputFileImport, data.FILE.duplikat);
+      element.click(pemilihanTetapPage.buttonFileImport);
+      element.click(pemilihanTetapPage.swalConfirm);
+      assert.shouldContainText(pemilihanTetapPage.swalContent, 'Successfully changed data.');
+      element.click(pemilihanTetapPage.swalConfirm);
+      cy.wait(3000)
+
+      // Import pemilihan tetap dengan data blank
+      element.click(pemilihanTetapPage.dropDownImport);
+      element.click(pemilihanTetapPage.modalImport);
+      element.fillFile(pemilihanTetapPage.inputFileImport, data.FILE.blank);
+      element.click(pemilihanTetapPage.buttonFileImport);
+      element.click(pemilihanTetapPage.swalConfirm);
+      assert.shouldContainText(pemilihanTetapPage.swalContent, 'System error, please contact the Administrator');
+      element.click(pemilihanTetapPage.swalConfirm);
+      cy.wait(3000)
+
+      // Import pemilihan tetap dengan data non excel
+      element.click(pemilihanTetapPage.dropDownImport);
+      element.click(pemilihanTetapPage.modalImport);
+      element.fillFile(pemilihanTetapPage.inputFileImport, data.FILE.blank);
+      element.click(pemilihanTetapPage.buttonFileImport);
+      element.click(pemilihanTetapPage.swalConfirm);
+      assert.shouldContainText(pemilihanTetapPage.swalContent, 'System error, please contact the Administrator');
+      element.click(pemilihanTetapPage.swalConfirm);
+      cy.wait(3000)
     });
   });
