@@ -11,6 +11,14 @@ export const assertionEmptySearch = '.dataTables_empty';
 
 // Filter
 export const filterButton = '.input-group-append > .btn';
+export const filterProvinsi = '#filter_provinsi_id';
+export const filterKota = '#filter_kota_id';
+export const filterKecamatan = '#filter_kecamatan_id';
+export const filterKelurahan = '#filter_kelurahan_id';
+export const filterTps = '#filter_tps_id';
+export const buttonApply = '#table-inputpemilih_id-modal > .modal-dialog > .modal-content > form > .modal-footer > .btn-aps';
+export const buttonApplyShow = '.show > .modal-dialog > .modal-content > form > .modal-footer > .btn-aps';
+export const assertionFilter = '#table-inputpemilih';
 
 // Import
 export const dropDownImport = '.dropdown-toggle';

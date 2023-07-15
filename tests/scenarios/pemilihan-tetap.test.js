@@ -37,6 +37,31 @@
       assert.shouldContainText(pemilihanTetapPage.assertionSearch, data.SEARCH_DATA.blank);
       cy.wait(3000)
       
+      // Filter pemilihan tetap dengan data valid
+      element.click(pemilihanTetapPage.filterButton);
+      element.fillSelect(pemilihanTetapPage.filterProvinsi, data.FILTER_DATA.provinsi, {force: true});
+      element.fillSelect(pemilihanTetapPage.filterKota, data.FILTER_DATA.kota, {force: true});
+      element.fillSelect(pemilihanTetapPage.filterKecamatan, data.FILTER_DATA.kecamatan, {force: true});
+      element.fillSelect(pemilihanTetapPage.filterKelurahan, data.FILTER_DATA.kelurahan, {force: true});
+      element.fillSelect(pemilihanTetapPage.filterTps, data.FILTER_DATA.tps, {force: true});
+      element.click(pemilihanTetapPage.buttonApply)
+      assert.shouldContainText(pemilihanTetapPage.assertionFilter, data.FILTER_DATA.assertion);
+      cy.wait(3000)
+      
+      // Filter pemilihan tetap dengan data blank
+      element.click(pemilihanTetapPage.filterButton);
+      element.click(pemilihanTetapPage.buttonApplyShow);
+      assert.shouldContainText(pemilihanTetapPage.assertionEmptySearch, 'No records available');
+      cy.wait(3000)
+      
+      // Filter pemilihan tetap dengan data salah satu blank
+      element.click(pemilihanTetapPage.filterButton);
+      element.fillSelect(pemilihanTetapPage.filterProvinsi, data.FILTER_DATA.provinsi, {force: true});
+      element.fillSelect(pemilihanTetapPage.filterKota, data.FILTER_DATA.kota, {force: true});
+      element.click(pemilihanTetapPage.buttonApplyShow);
+      assert.shouldContainText(pemilihanTetapPage.assertionFilter, data.FILTER_DATA.assertionBlank);
+      cy.wait(3000)
+      
       // Import pemilihan tetap dengan data valid
       element.click(pemilihanTetapPage.dropDownImport);
       element.click(pemilihanTetapPage.modalImport);
@@ -85,6 +110,5 @@
       element.click(pemilihanTetapPage.swalConfirm);
       assert.shouldContainText(pemilihanTetapPage.swalContent, 'System error, please contact the Administrator');
       element.click(pemilihanTetapPage.swalConfirm);
-      cy.wait(3000)
     });
   });
