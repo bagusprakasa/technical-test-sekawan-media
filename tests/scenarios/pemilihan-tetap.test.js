@@ -17,5 +17,24 @@
       element.fillFilled(pemilihanTetapPage.passwordInput, data.VALID_LOGIN.password);
       element.click(pemilihanTetapPage.loginButton);
       assert.shouldContainText(pemilihanTetapPage.countDown,'Countdown');
+      cy.wait(3000);
+      
+      // Redirect ke menu pemilihan tetap
+      element.click(pemilihanTetapPage.menuPemilihanTetap);
+      
+      // Pencarian pemilihan tetap dengan data valid
+      element.fillFilled(pemilihanTetapPage.searchInput, data.SEARCH_DATA.valid);
+      assert.shouldContainText(pemilihanTetapPage.assertionSearch, data.SEARCH_DATA.valid);
+      cy.wait(3000)
+      
+      // Pencarian pemilihan tetap dengan data valid
+      element.fillFilledClear(pemilihanTetapPage.searchInput, data.SEARCH_DATA.invalid);
+      assert.shouldContainText(pemilihanTetapPage.assertionEmptySearch, 'Nothing found - sorry');
+      cy.wait(3000)
+      
+      // Pencarian pemilihan tetap dengan data blank
+      element.fillFilledClear(pemilihanTetapPage.searchInput, data.SEARCH_DATA.blank);
+      assert.shouldContainText(pemilihanTetapPage.assertionSearch, data.SEARCH_DATA.blank);
+      cy.wait(3000)
     });
   });
