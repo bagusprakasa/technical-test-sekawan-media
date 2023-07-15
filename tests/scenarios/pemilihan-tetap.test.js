@@ -22,8 +22,149 @@
       // Redirect ke menu pemilihan tetap
       element.click(pemilihanTetapPage.menuPemilihanTetap);
       
+      // Input Data Valid
+      element.click(pemilihanTetapPage.addButton);
+      assert.shouldContainText(pemilihanTetapPage.assertionAdd, 'Form Input Pemilih');
+      element.fillFilled(pemilihanTetapPage.inputKk, data.VALID_INPUT.kk);
+      element.fillFilled(pemilihanTetapPage.inputNik, data.VALID_INPUT.nik);
+      element.fillFilled(pemilihanTetapPage.inputNama, data.VALID_INPUT.name);
+      element.fillFilled(pemilihanTetapPage.inputAlamat, data.VALID_INPUT.address);
+      element.fillFilled(pemilihanTetapPage.inputRt, data.VALID_INPUT.rt);
+      element.fillFilled(pemilihanTetapPage.inputRw, data.VALID_INPUT.rw);
+      element.fillSelect(pemilihanTetapPage.inputKelurahan, data.VALID_INPUT.kelurahan, {force: true});
+      element.fillFilled(pemilihanTetapPage.inputTempatLahir, data.VALID_INPUT.tempatLahir);
+      element.fillFilled(pemilihanTetapPage.inputTanggalLahir, data.VALID_INPUT.tanggalLahir);
+      element.fillCheck(pemilihanTetapPage.inputJenisKelamin, data.VALID_INPUT.jk, {force: true});
+      element.fillSelect(pemilihanTetapPage.inputStatusKawin, data.VALID_INPUT.statusKawin, {force: true});
+      element.fillSelect(pemilihanTetapPage.inputCaleg, data.VALID_INPUT.caleg, {force: true});
+      element.fillSelect(pemilihanTetapPage.inputTps, data.VALID_INPUT.tps, {force: true});
+      element.fillCheck(pemilihanTetapPage.inputStatus, data.VALID_INPUT.status, {force: true});
+      element.click(pemilihanTetapPage.saveButton);
+      cy.wait(3000)
+      element.click(pemilihanTetapPage.backButton);
+      
+      // Input Data Duplicate
+      element.click(pemilihanTetapPage.addButton);
+      assert.shouldContainText(pemilihanTetapPage.assertionAdd, 'Form Input Pemilih');
+      element.fillFilled(pemilihanTetapPage.inputKk, data.DUPLICATE_INPUT.kk);
+      element.fillFilled(pemilihanTetapPage.inputNik, data.DUPLICATE_INPUT.nik);
+      element.fillFilled(pemilihanTetapPage.inputNama, data.DUPLICATE_INPUT.name);
+      element.fillFilled(pemilihanTetapPage.inputAlamat, data.DUPLICATE_INPUT.address);
+      element.fillFilled(pemilihanTetapPage.inputRt, data.DUPLICATE_INPUT.rt);
+      element.fillFilled(pemilihanTetapPage.inputRw, data.DUPLICATE_INPUT.rw);
+      element.fillSelect(pemilihanTetapPage.inputKelurahan, data.DUPLICATE_INPUT.kelurahan, {force: true});
+      element.fillFilled(pemilihanTetapPage.inputTempatLahir, data.DUPLICATE_INPUT.tempatLahir);
+      element.fillFilled(pemilihanTetapPage.inputTanggalLahir, data.DUPLICATE_INPUT.tanggalLahir);
+      element.fillCheck(pemilihanTetapPage.inputJenisKelamin, data.DUPLICATE_INPUT.jk, {force: true});
+      element.fillSelect(pemilihanTetapPage.inputStatusKawin, data.DUPLICATE_INPUT.statusKawin, {force: true});
+      element.fillSelect(pemilihanTetapPage.inputCaleg, data.DUPLICATE_INPUT.caleg, {force: true});
+      element.fillSelect(pemilihanTetapPage.inputTps, data.DUPLICATE_INPUT.tps, {force: true});
+      element.fillCheck(pemilihanTetapPage.inputStatus, data.DUPLICATE_INPUT.status, {force: true});
+      element.click(pemilihanTetapPage.saveButton);
+      cy.wait(3000)
+      element.click(pemilihanTetapPage.backButton);
+
+      // Input Data Blank
+      element.click(pemilihanTetapPage.addButton);
+      assert.shouldContainText(pemilihanTetapPage.assertionAdd, 'Form Input Pemilih');
+      element.click(pemilihanTetapPage.saveButton);
+      assert.shouldContainText(pemilihanTetapPage.errorKk, ' No. KK  tidak boleh kosong.');
+      assert.shouldContainText(pemilihanTetapPage.errorNik, ' No. NIK  tidak boleh kosong.');
+      assert.shouldContainText(pemilihanTetapPage.errorNama, ' Nama  tidak boleh kosong.');
+      assert.shouldContainText(pemilihanTetapPage.errorAlamat, ' Alamat  tidak boleh kosong.');
+      assert.shouldContainText(pemilihanTetapPage.errorRt, ' RT  tidak boleh kosong.');
+      assert.shouldContainText(pemilihanTetapPage.errorRw, ' RW  tidak boleh kosong.');
+      assert.shouldContainText(pemilihanTetapPage.errorKelurahan, ' Kelurahan  tidak boleh kosong.');
+      assert.shouldContainText(pemilihanTetapPage.errorTempatLahir, ' Tempat Lahir  tidak boleh kosong.');
+      assert.shouldContainText(pemilihanTetapPage.errorTanggalLahir, ' Tanggal Lahir  tidak boleh kosong.');
+      assert.shouldContainText(pemilihanTetapPage.errorJenisKelamin, 'Jenis Kelamin tidak boleh kosong.');
+      assert.shouldContainText(pemilihanTetapPage.errorStatusKawin, ' Status Kawin  tidak boleh kosong.');
+      assert.shouldContainText(pemilihanTetapPage.errorCaleg, ' Caleg  tidak boleh kosong.');
+      assert.shouldContainText(pemilihanTetapPage.errorTps, ' TPS  tidak boleh kosong.');
+      assert.shouldContainText(pemilihanTetapPage.errorStatus, 'Status belum dipilih!');
+      cy.wait(3000)
+      element.click(pemilihanTetapPage.backButton);
+
+      // Input Data Invalid
+      element.click(pemilihanTetapPage.addButton);
+      assert.shouldContainText(pemilihanTetapPage.assertionAdd, 'Form Input Pemilih');
+      element.fillFilled(pemilihanTetapPage.inputKk, data.INVALID_INPUT.kk);
+      element.fillFilled(pemilihanTetapPage.inputNik, data.INVALID_INPUT.nik);
+      element.fillFilled(pemilihanTetapPage.inputNama, data.INVALID_INPUT.name);
+      element.fillFilled(pemilihanTetapPage.inputAlamat, data.INVALID_INPUT.address);
+      element.fillFilled(pemilihanTetapPage.inputRt, data.INVALID_INPUT.rt);
+      element.fillFilled(pemilihanTetapPage.inputRw, data.INVALID_INPUT.rw);
+      element.fillSelect(pemilihanTetapPage.inputKelurahan, data.INVALID_INPUT.kelurahan, {force: true});
+      element.fillFilled(pemilihanTetapPage.inputTempatLahir, data.INVALID_INPUT.tempatLahir);
+      element.fillFilled(pemilihanTetapPage.inputTanggalLahir, data.INVALID_INPUT.tanggalLahir);
+      element.fillCheck(pemilihanTetapPage.inputJenisKelamin, data.INVALID_INPUT.jk, {force: true});
+      element.fillSelect(pemilihanTetapPage.inputStatusKawin, data.INVALID_INPUT.statusKawin, {force: true});
+      element.fillSelect(pemilihanTetapPage.inputCaleg, data.INVALID_INPUT.caleg, {force: true});
+      element.fillSelect(pemilihanTetapPage.inputTps, data.INVALID_INPUT.tps, {force: true});
+      element.fillCheck(pemilihanTetapPage.inputStatus, data.INVALID_INPUT.status, {force: true});
+      element.click(pemilihanTetapPage.saveButton);
+      assert.shouldContainText(pemilihanTetapPage.errorKkUnder16Char, 'Jumlah karakter KK tidak boleh lebih atau kurang dari 16 karakter');
+      assert.shouldContainText(pemilihanTetapPage.errorNikUnder16Char, 'Jumlah karakter NIK tidak boleh lebih atau kurang dari 16 karakter');
+      cy.wait(3000)
+      element.click(pemilihanTetapPage.backButton);
+      
+      // Input Data One Character
+      element.click(pemilihanTetapPage.addButton);
+      assert.shouldContainText(pemilihanTetapPage.assertionAdd, 'Form Input Pemilih');
+      element.fillFilled(pemilihanTetapPage.inputKk, data.INVALID_INPUT_ONE_CHAR.kk);
+      element.fillFilled(pemilihanTetapPage.inputNik, data.INVALID_INPUT_ONE_CHAR.nik);
+      element.fillFilled(pemilihanTetapPage.inputNama, data.INVALID_INPUT_ONE_CHAR.name);
+      element.fillFilled(pemilihanTetapPage.inputAlamat, data.INVALID_INPUT_ONE_CHAR.address);
+      element.fillFilled(pemilihanTetapPage.inputRt, data.INVALID_INPUT_ONE_CHAR.rt);
+      element.fillFilled(pemilihanTetapPage.inputRw, data.INVALID_INPUT_ONE_CHAR.rw);
+      element.fillSelect(pemilihanTetapPage.inputKelurahan, data.INVALID_INPUT_ONE_CHAR.kelurahan, {force: true});
+      element.fillFilled(pemilihanTetapPage.inputTempatLahir, data.INVALID_INPUT_ONE_CHAR.tempatLahir);
+      element.fillFilled(pemilihanTetapPage.inputTanggalLahir, data.INVALID_INPUT_ONE_CHAR.tanggalLahir);
+      element.fillCheck(pemilihanTetapPage.inputJenisKelamin, data.INVALID_INPUT_ONE_CHAR.jk, {force: true});
+      element.fillSelect(pemilihanTetapPage.inputStatusKawin, data.INVALID_INPUT_ONE_CHAR.statusKawin, {force: true});
+      element.fillSelect(pemilihanTetapPage.inputCaleg, data.INVALID_INPUT_ONE_CHAR.caleg, {force: true});
+      element.fillSelect(pemilihanTetapPage.inputTps, data.INVALID_INPUT_ONE_CHAR.tps, {force: true});
+      element.fillCheck(pemilihanTetapPage.inputStatus, data.INVALID_INPUT_ONE_CHAR.status, {force: true});
+      element.click(pemilihanTetapPage.saveButton);
+      assert.shouldContainText(pemilihanTetapPage.errorKkUnder16Char, 'Jumlah karakter KK tidak boleh lebih atau kurang dari 16 karakter');
+      assert.shouldContainText(pemilihanTetapPage.errorNikUnder16Char, 'Jumlah karakter NIK tidak boleh lebih atau kurang dari 16 karakter');
+      cy.wait(3000)
+      element.click(pemilihanTetapPage.backButton);
+      
+      // Input Data Space
+      element.click(pemilihanTetapPage.addButton);
+      assert.shouldContainText(pemilihanTetapPage.assertionAdd, 'Form Input Pemilih');
+      element.fillFilled(pemilihanTetapPage.inputKk, data.INVALID_INPUT_SPACE.kk);
+      element.fillFilled(pemilihanTetapPage.inputNik, data.INVALID_INPUT_SPACE.nik);
+      element.fillFilled(pemilihanTetapPage.inputNama, data.INVALID_INPUT_SPACE.name);
+      element.fillFilled(pemilihanTetapPage.inputAlamat, data.INVALID_INPUT_SPACE.address);
+      cy.get(pemilihanTetapPage.inputTanggalLahir).type(data.INVALID_INPUT_SPACE.rt).should("have.value", data.INVALID_INPUT_SPACE.emptyValue);
+      cy.get(pemilihanTetapPage.inputTanggalLahir).type(data.INVALID_INPUT_SPACE.rw).should("have.value", data.INVALID_INPUT_SPACE.emptyValue);
+      element.fillFilled(pemilihanTetapPage.inputTempatLahir, data.INVALID_INPUT_SPACE.tempatLahir);
+      cy.get(pemilihanTetapPage.inputTanggalLahir).type(data.INVALID_INPUT_SPACE.tanggalLahir).should("have.value", data.INVALID_INPUT_SPACE.emptyValue);
+      element.click(pemilihanTetapPage.saveButton);
+      assert.shouldContainText(pemilihanTetapPage.errorKkUnder16Char, 'Jumlah karakter KK tidak boleh lebih atau kurang dari 16 karakter');
+      assert.shouldContainText(pemilihanTetapPage.errorNikUnder16Char, 'Jumlah karakter NIK tidak boleh lebih atau kurang dari 16 karakter');
+      assert.shouldContainText(pemilihanTetapPage.errorKk, ' No. KK  tidak boleh kosong.');
+      assert.shouldContainText(pemilihanTetapPage.errorNik, ' No. NIK  tidak boleh kosong.');
+      assert.shouldContainText(pemilihanTetapPage.errorNama, ' Nama  tidak boleh kosong.');
+      assert.shouldContainText(pemilihanTetapPage.errorAlamat, ' Alamat  tidak boleh kosong.');
+      assert.shouldContainText(pemilihanTetapPage.errorRt, ' RT  tidak boleh kosong.');
+      assert.shouldContainText(pemilihanTetapPage.errorRw, ' RW  tidak boleh kosong.');
+      assert.shouldContainText(pemilihanTetapPage.errorKelurahan, ' Kelurahan  tidak boleh kosong.');
+      assert.shouldContainText(pemilihanTetapPage.errorTempatLahir, ' Tempat Lahir  tidak boleh kosong.');
+      assert.shouldContainText(pemilihanTetapPage.errorTanggalLahir, ' Tanggal Lahir  tidak boleh kosong.');
+      assert.shouldContainText(pemilihanTetapPage.errorJenisKelamin, 'Jenis Kelamin tidak boleh kosong.');
+      assert.shouldContainText(pemilihanTetapPage.errorStatusKawin, ' Status Kawin  tidak boleh kosong.');
+      assert.shouldContainText(pemilihanTetapPage.errorCaleg, ' Caleg  tidak boleh kosong.');
+      assert.shouldContainText(pemilihanTetapPage.errorTps, ' TPS  tidak boleh kosong.');
+      assert.shouldContainText(pemilihanTetapPage.errorStatus, 'Status belum dipilih!');
+      cy.wait(3000)
+      element.click(pemilihanTetapPage.backButton);
+      
       // Pencarian pemilihan tetap dengan data valid
-      element.fillFilled(pemilihanTetapPage.searchInput, data.SEARCH_DATA.valid);
+      // element.fillFilled(pemilihanTetapPage.searchInput, data.SEARCH_DATA.valid, {force:true});
+      cy.get(pemilihanTetapPage.searchInput).type(data.SEARCH_DATA.valid);
       assert.shouldContainText(pemilihanTetapPage.assertionSearch, data.SEARCH_DATA.valid);
       cy.wait(3000)
       

@@ -8,6 +8,7 @@ module.exports = defineConfig({
   viewportHeight: 660,
   video: false,
   chromeWebSecurity: false,
+  experimentalMemoryManagement: true,
   defaultCommandTimeout: 10000,
   env: {
     baseUrl: process.env.BASE_URL
