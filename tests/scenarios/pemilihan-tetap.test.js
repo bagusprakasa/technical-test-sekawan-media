@@ -163,7 +163,8 @@
       element.click(pemilihanTetapPage.backButton);
       
       // Pencarian pemilihan tetap dengan data valid
-      element.fillFilled(pemilihanTetapPage.searchInput, data.SEARCH_DATA.valid);
+      // element.fillFilled(pemilihanTetapPage.searchInput, data.SEARCH_DATA.valid, {force:true});
+      cy.get(pemilihanTetapPage.searchInput).type(data.SEARCH_DATA.valid);
       assert.shouldContainText(pemilihanTetapPage.assertionSearch, data.SEARCH_DATA.valid);
       cy.wait(3000)
       
