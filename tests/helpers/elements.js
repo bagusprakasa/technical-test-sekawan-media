@@ -10,8 +10,8 @@ export function fillFilledClear(selector, value) {
   return cy.get(selector).clear().type(value).should("have.value", value);
 }
 
-export function fillSelect(selector, value) {
-  return cy.get(selector).select(value).should("have.value", value);
+export function fillSelect(selector, value, ...args) {
+  return cy.get(selector).select(value, ...args).should("have.value", value);
 }
 
 export function fillFile(selector, value) {
