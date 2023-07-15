@@ -12,6 +12,10 @@
   });
   describe("Pemilihan tetap test", () => {
     it("Test Scenario", () => {
-      
+      // Login Test
+      element.fillFilled(pemilihanTetapPage.usernameInput, data.VALID_LOGIN.username);
+      element.fillFilled(pemilihanTetapPage.passwordInput, data.VALID_LOGIN.password);
+      element.click(pemilihanTetapPage.loginButton);
+      assert.shouldContainText(pemilihanTetapPage.countDown,'Countdown');
     });
   });
