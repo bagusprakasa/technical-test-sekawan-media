@@ -14,6 +14,14 @@ export function fillSelect(selector, value, ...args) {
   return cy.get(selector).select(value, ...args).should("have.value", value);
 }
 
+export function fillCheck(selector, value, ...args) {
+  return cy.get(selector).check(value, ...args).should("have.value", value);
+}
+
+export function fillUncheck(selector, ...args) {
+  return cy.get(selector).uncheck(...args);
+}
+
 export function fillFile(selector, value) {
   return cy.get(selector).selectFile(value);
 }

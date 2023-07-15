@@ -3,10 +3,100 @@ export const VALID_LOGIN = {
   password: "password123"
 };
 
+export const VALID_INPUT = {
+  kk: 3525011711086058,
+  nik: 3525015201880002,
+  name: 'User Testing Candidat Galih Bagus Prakasa',
+  address: 'Bondowoso',
+  rt: 12,
+  rw: 13,
+  kelurahan: 'c2bd3c08745adeb9204ec736f550e017',
+  tempatLahir: 'Bondowoso',
+  tanggalLahir: '11111999',
+  editTanggalLahir: '11/11/1999',
+  jk: 'L',
+  statusKawin: '638dee9c57c748cdbfbd37c861e6923a',
+  caleg: '0926a39a50026a88279cc70b79e9bc97',
+  tps: '5a2d78d52a7a4c2f75062d2b5d5de7e1',
+  status: 'cc07344b3bf31cddc6e5019dbe477ddd',
+}
+
+export const DUPLICATE_INPUT = {
+  kk: 6674455888884110,
+  nik: 9994455456244440,
+  name: 'Desak Ayu',
+  address: 'Pemenang',
+  rt: 3,
+  rw: 8,
+  kelurahan: 'c2bd3c08745adeb9204ec736f550e017',
+  tempatLahir: 'Pemenang',
+  tanggalLahir: '25011900',
+  editTanggalLahir: '25/01/1900',
+  jk: 'L',
+  statusKawin: 'a15f49ad233056d8fee60c5aeeeef174',
+  caleg: '0926a39a50026a88279cc70b79e9bc97',
+  tps: '5a2d78d52a7a4c2f75062d2b5d5de7e1',
+  status: 'cc07344b3bf31cddc6e5019dbe477ddd',
+}
+
+export const INVALID_INPUT = {
+  kk: 'Testing',
+  nik: 'Testing',
+  name: 'Desak Ayu',
+  address: 'Pemenang',
+  rt: 3,
+  rw: 8,
+  kelurahan: 'c2bd3c08745adeb9204ec736f550e017',
+  tempatLahir: 'Pemenang',
+  tanggalLahir: '25011900',
+  editTanggalLahir: '25/01/1900',
+  jk: 'L',
+  statusKawin: 'a15f49ad233056d8fee60c5aeeeef174',
+  caleg: '0926a39a50026a88279cc70b79e9bc97',
+  tps: '5a2d78d52a7a4c2f75062d2b5d5de7e1',
+  status: 'cc07344b3bf31cddc6e5019dbe477ddd',
+}
+
+export const INVALID_INPUT_ONE_CHAR = {
+  kk: 'A',
+  nik: 'A',
+  name: 'A',
+  address: 'A',
+  rt: 3,
+  rw: 8,
+  kelurahan: 'c2bd3c08745adeb9204ec736f550e017',
+  tempatLahir: 'A',
+  tanggalLahir: '2',
+  jk: 'L',
+  statusKawin: 'a15f49ad233056d8fee60c5aeeeef174',
+  caleg: '0926a39a50026a88279cc70b79e9bc97',
+  tps: '5a2d78d52a7a4c2f75062d2b5d5de7e1',
+  status: 'cc07344b3bf31cddc6e5019dbe477ddd',
+}
+
+export const INVALID_INPUT_SPACE = {
+  kk: ' ',
+  nik: ' ',
+  name: ' ',
+  address: ' ',
+  rt: ' ',
+  rw: ' ',
+  kelurahan: ' ',
+  tempatLahir: ' ',
+  tanggalLahir: ' ',
+  jk: ' ',
+  statusKawin: ' ',
+  caleg: ' ',
+  tps: ' ',
+  status: ' ',
+  emptyValue: '',
+}
+
 export const SEARCH_DATA = {
   valid: 'aaaaa123',
   invalid: 'qq',
   blank: ' ',
+  edit: 'Gina',
 };
 
 export const FILTER_DATA = {
