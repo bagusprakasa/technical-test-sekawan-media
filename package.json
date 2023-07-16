@@ -4,7 +4,8 @@
   "description": "Technical Test Quality Control Sekawan Media oleh Galih Bagus Prakasa",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "npx cypress run",
+    "open": "npx cypress open"
   },
   "repository": {
     "type": "git",
@@ -27,7 +28,8 @@
   "homepage": "https://github.com/bagusprakasa/technical-test-sekawan-media#readme",
   "devDependencies": {
     "@cypress/browserify-preprocessor": "^3.0.2",
-    "cypress": "^12.17.1"
+    "cypress": "^12.17.1",
+    "cypress-mochawesome-reporter": "^3.5.1"
   },
   "dependencies": {
     "babel-plugin-module-resolver": "^5.0.0",
