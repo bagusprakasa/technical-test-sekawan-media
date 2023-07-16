@@ -13,9 +13,12 @@ module.exports = defineConfig({
   env: {
     baseUrl: process.env.BASE_URL
   },
+  reporter: 'cypress-mochawesome-reporter',
+  screenshotOnRunFailure:true,
   e2e: {
     setupNodeEvents(on, config) {
       // implement node event listeners here
+      require('cypress-mochawesome-reporter/plugin')(on);
       let options = browserify.defaultOptions;
       options.browserifyOptions.transform[1][1].plugins.push([
         "module-resolver",
@@ -28,6 +31,6 @@ module.exports = defineConfig({
       ]);
       on("file:preprocessor", browserify(options));
     },
-    specPattern: "tests/scenarios/**/*.test.js"
+    specPattern: "tests/scenarios/**/*.test.js",
   }
 });
